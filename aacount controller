@@ -34,7 +34,7 @@ namespace MenBarberApp.Controllers
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
             }
-            return View(model);
+            return View(model),
         }
 
         // Giriş işlemi
