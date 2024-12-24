@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Identity
+using Microsoft.AspNetCore.Identit
 using Microsoft.AspNetCore.Mvc
 using MenBarberApp.Models;
 using MenBarberApp.ViewModels
