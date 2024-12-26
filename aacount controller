@@ -4,7 +4,7 @@ using MenBarberApp.Models;
 using MenBarberApp.ViewModels
 
 namespace MenBarberApp.Controller
-,
+
 {
     public class AccountController : Controller
     {
