@@ -1,38 +1,52 @@
-﻿@model BerberWebSitesi.Models.Admin
+﻿@model BerberWebSitesi.Models.Appointment
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Randevu Al";
 }
 
-<h1>Create</h1>
+<div class="container mt-5">
+    <h1>Randevu Al</h1>
+    <form asp-action="Create" method="post">
+        <div class="form-group">
+            <label for="CustomerId">Müşteri</label>
+            <select id="CustomerId" name="CustomerId" class="form-control" required>
+                @foreach (var customer in ViewBag.Customers as List<BerberWebSitesi.Models.Customer>)
+                {
+                    <option value="@customer.Id">@customer.FirstName @customer.LastName</option>
+                }
+            </select>
+        </div>
 
-<h4>Admin</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Username" class="control-label"></label>
-                <input asp-for="Username" class="form-control" />
-                <span asp-validation-for="Username" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+        <div class="form-group">
+            <label for="ServiceId">Hizmet</label>
+            <select id="ServiceId" name="ServiceId" class="form-control" required>
+                @foreach (var service in ViewBag.Services as List<BerberWebSitesi.Models.Service>)
+                {
+                    <option value="@service.Id">@service.Name (@service.Duration.TotalMinutes dakika, @service.Price ₺)</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="EmployeeId">Çalışan</label>
+            <select id="EmployeeId" name="EmployeeId" class="form-control" required>
+                @foreach (var employee in ViewBag.Employees as List<BerberWebSitesi.Models.Employee>)
+                {
+                    <option value="@employee.Id">@employee.FirstName @employee.LastName</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Date">Tarih</label>
+            <input type="date" id="Date" name="Date" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="StartTime">Başlangıç Saati</label>
+            <input type="time" id="StartTime" name="StartTime" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-4">Randevu Oluştur</button>
+    </form>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
