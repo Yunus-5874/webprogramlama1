@@ -1,53 +1,41 @@
-﻿@model IEnumerable<BerberWebSitesi.Models.Customer>
+﻿@model IEnumerable<BerberWebSitesi.Models.Employee>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Çalışanlar";
 }
 
-<h1>Index</h1>
+<div class="container mt-5">
+    <h1>Çalışanlar</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>İsim</th>
+                <th>Soyisim</th>
+                <th>Telefon</th>
+                <th>Email</th>
+                <th>Yaptığı İşler</th>
+                <th>Çalışma Günleri</th>
+                <th>Çalışma Saatleri</th>
+                <th>İzin Günleri</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Model)
+            {
+                <tr>
+                    <td>@employee.FirstName</td>
+                    <td>@employee.LastName</td>
+                    <td>@employee.Phone</td>
+                    <td>@employee.Email</td>
+                    <td>@employee.JobTitle</td>
+                    <td>@employee.WorkDays</td>
+                    <td>@employee.WorkHours</td>
+                    <td>@employee.LeaveDays</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

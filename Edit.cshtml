@@ -1,49 +1,44 @@
-﻿@model BerberWebSitesi.Models.Customer
+﻿@model BerberWebSitesi.Models.Employee
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Yeni Çalışan Ekle";
 }
 
-<h1>Edit</h1>
-
-<h4>Customer</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Phone" class="control-label"></label>
-                <input asp-for="Phone" class="form-control" />
-                <span asp-validation-for="Phone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+<div class="container mt-5">
+    <h1>Yeni Çalışan Ekle</h1>
+    <form asp-action="Edit" method="post">
+        <div class="form-group">
+            <label for="FirstName">İsim</label>
+            <input type="text" id="FirstName" name="FirstName" class="form-control" required />
+        </div>
+        <div class="form-group mt-3">
+            <label for="LastName">Soyisim</label>
+            <input type="text" id="LastName" name="LastName" class="form-control" required />
+        </div>
+        <div class="form-group mt-3">
+            <label for="Phone">Telefon</label>
+            <input type="tel" id="Phone" name="Phone" class="form-control" required />
+        </div>
+        <div class="form-group mt-3">
+            <label for="Email">Email</label>
+            <input type="email" id="Email" name="Email" class="form-control" required />
+        </div>
+        <div class="form-group mt-3">
+            <label for="JobTitle">Yaptığı İşler</label>
+            <input type="text" id="JobTitle" name="JobTitle" class="form-control" required />
+        </div>
+        <div class="form-group mt-3">
+            <label for="WorkDays">Çalışma Günleri</label>
+            <input type="text" id="WorkDays" name="WorkDays" class="form-control" required />
+        </div>
+        <div class="form-group mt-3">
+            <label for="WorkHours">Çalışma Saatleri</label>
+            <input type="text" id="WorkHours" name="WorkHours" class="form-control" required />
+        </div>
+        <div class="form-group mt-3">
+            <label for="LeaveDays">İzin Günleri</label>
+            <input type="text" id="LeaveDays" name="LeaveDays" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Kaydet</button>
+    </form>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

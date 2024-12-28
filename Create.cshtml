@@ -1,11 +1,11 @@
-﻿@model BerberWebSitesi.Models.Customer
+﻿@model BerberWebSitesi.Models.Employee
 
 @{
-    ViewData["Title"] = "Müşteri Ol";
+    ViewData["Title"] = "Yeni Çalışan Ekle";
 }
 
 <div class="container mt-5">
-    <h1>Müşteri Ol</h1>
+    <h1>Yeni Çalışan Ekle</h1>
     <form asp-action="Create" method="post">
         <div class="form-group">
             <label for="FirstName">İsim</label>
@@ -20,9 +20,25 @@
             <input type="tel" id="Phone" name="Phone" class="form-control" required />
         </div>
         <div class="form-group mt-3">
-            <label for="Email">E-posta</label>
+            <label for="Email">Email</label>
             <input type="email" id="Email" name="Email" class="form-control" required />
         </div>
-        <button type="submit" class="btn btn-primary mt-4">Kaydol</button>
+        <div class="form-group mt-3">
+            <label for="JobTitle">Yaptığı İşler</label>
+            <input type="text" id="JobTitle" name="JobTitle" class="form-control" required />
+        </div>
+        <div class="form-group mt-3">
+            <label for="WorkDays">Çalışma Günleri</label>
+            <input type="text" id="WorkDays" name="WorkDays" class="form-control" required />
+        </div>
+        <div class="form-group mt-3">
+            <label for="WorkHours">Çalışma Saatleri</label>
+            <input type="text" id="WorkHours" name="WorkHours" class="form-control" required />
+        </div>
+        <div class="form-group mt-3">
+            <label for="LeaveDays">İzin Günleri</label>
+            <input type="text" id="LeaveDays" name="LeaveDays" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Kaydet</button>
     </form>
 </div>
