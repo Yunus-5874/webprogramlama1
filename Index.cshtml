@@ -1,41 +1,33 @@
-﻿@model IEnumerable<BerberWebSitesi.Models.Employee>
-
-@{
-    ViewData["Title"] = "Çalışanlar";
+﻿@{
+    ViewData["Title"] = "Home Page";
 }
 
 <div class="container mt-5">
-    <h1>Çalışanlar</h1>
-
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>İsim</th>
-                <th>Soyisim</th>
-                <th>Telefon</th>
-                <th>Email</th>
-                <th>Yaptığı İşler</th>
-                <th>Çalışma Günleri</th>
-                <th>Çalışma Saatleri</th>
-                <th>İzin Günleri</th>
-               
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var employee in Model)
-            {
-                <tr>
-                    <td>@employee.FirstName</td>
-                    <td>@employee.LastName</td>
-                    <td>@employee.Phone</td>
-                    <td>@employee.Email</td>
-                    <td>@employee.JobTitle</td>
-                    <td>@employee.WorkDays</td>
-                    <td>@employee.WorkHours</td>
-                    <td>@employee.LeaveDays</td>
-
-                </tr>
-            }
-        </tbody>
-    </table>
+    <div class="text-center">
+        <h1>Hoş Geldiniz</h1>
+        <p class="lead">Berber Salonu Web Sitesi</p>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Hakkımızda</h2>
+            <p>
+                Berberimiz, modern saç stilleri ve geleneksel berberlik hizmetleriyle tanınmaktadır.
+                Profesyonel kadromuzla sizin için buradayız.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <h2>İletişim Bilgileri</h2>
+            <ul>
+                <li><strong>Adres:</strong> Örnek Mahallesi, Sokak 123</li>
+                <li><strong>Telefon:</strong> +90 555 123 4567</li>
+                <li><strong>Açılış Saatleri:</strong> 09:00 - 21:00</li>
+            </ul>
+        </div>
+    </div>
+    <hr />
+    <div class="text-center mt-4">
+        <h2>Yaptığımız İşlemler</h2>
+        <p>Klasik Tıraş, Saç Kesimi, Sakal Şekillendirme ve daha fazlası...</p>
+    </div>
 </div>
