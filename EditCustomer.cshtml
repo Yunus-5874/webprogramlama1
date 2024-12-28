@@ -1,0 +1,23 @@
+﻿@model BerberWebSitesi.Models.Customer
+
+<h2>Müşteri Düzenle</h2>
+
+<form method="post">
+    <div>
+        <label>Ad:</label>
+        <input asp-for="FirstName" />
+    </div>
+    <div>
+        <label>Soyad:</label>
+        <input asp-for="LastName" />
+    </div>
+    <div>
+        <label>Telefon:</label>
+        <input asp-for="Phone" />
+    </div>
+    <div>
+        <label>Email:</label>
+        <input asp-for="Email" />
+    </div>
+    <button type="submit">Kaydet</button>
+</form>

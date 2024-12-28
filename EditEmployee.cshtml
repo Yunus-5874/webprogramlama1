@@ -1,0 +1,46 @@
+﻿@model BerberWebSitesi.Models.Employee
+
+@{
+    ViewData["Title"] = "Çalışan Düzenle";
+}
+
+<div class="container mt-5">
+    <h1>Çalışan Düzenle</h1>
+    <form asp-action="EditEmployee" method="post">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="form-group">
+            <label for="FirstName">İsim</label>
+            <input type="text" id="FirstName" name="FirstName" asp-for="FirstName" class="form-control" required />
+        </div>
+        <div class="form-group mt-3">
+            <label for="LastName">Soyisim</label>
+            <input type="text" id="LastName" name="LastName" asp-for="LastName" class="form-control" required />
+        </div>
+        <div class="form-group mt-3">
+            <label for="Phone">Telefon</label>
+            <input type="tel" id="Phone" name="Phone" asp-for="Phone" class="form-control" required />
+        </div>
+        <div class="form-group mt-3">
+            <label for="Email">Email</label>
+            <input type="email" id="Email" name="Email" asp-for="Email" class="form-control" required />
+        </div>
+        <div class="form-group mt-3">
+            <label for="JobTitle">Yaptığı İşler</label>
+            <input type="text" id="JobTitle" name="JobTitle" asp-for="JobTitle" class="form-control" required />
+        </div>
+        <div class="form-group mt-3">
+            <label for="WorkDays">Çalışma Günleri</label>
+            <input type="text" id="WorkDays" name="WorkDays" asp-for="WorkDays" class="form-control" required />
+        </div>
+        <div class="form-group mt-3">
+            <label for="WorkHours">Çalışma Saatleri</label>
+            <input type="text" id="WorkHours" name="WorkHours" asp-for="WorkHours" class="form-control" required />
+        </div>
+        <div class="form-group mt-3">
+            <label for="LeaveDays">İzin Günleri</label>
+            <input type="text" id="LeaveDays" name="LeaveDays" asp-for="LeaveDays" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Güncelle</button>
+    </form>
+</div>
